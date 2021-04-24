@@ -2,6 +2,11 @@ const endPoint = "http://127.0.0.1:3000/api/v1/headphones"
 
 document.addEventListener('DOMContentLoaded', () => {
     getHeadphones()
+
+    const createHeadphoneForm = document.querySelector("#create-headphone-form")
+    
+    createHeadphoneForm.addEventListener("submit", (e) => createFormHandler(e))
+
 })
 
 function getHeadphones() {
@@ -23,4 +28,10 @@ function getHeadphones() {
           document.querySelector('#headphone-container').innerHTML += headphoneMarkup
       })
     })
+}
+
+function createFormHandler(e) {
+    e.preventDefault()
+    console.log(e);
+
 }
