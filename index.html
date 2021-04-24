@@ -1,15 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <script type="text/javascript" src="index.js"></script>
-    </head>
-    <body>
+    <html lang="en" dir="ltr">
+        <head>
+            <meta charset="utf-8">
+            <title></title>
+            <script type="text/javascript" src="index.js"></script>
+        </head>
+        <body>
 
-        <div id="headphone-container">
-            
-        </div>
+            <div class="form-container">
+        
+                <form id="create-headphone-form" style="">
+                    <h3>Create a new pair of Headphones!</h3>
 
-    </body>
-</html>
+                    <input id='input-brand' type="text" name="brand" value="" placeholder="Enter the headphone brand..." class="input-text">
+                    <br><br>
+                    <input id='input-model' name="model" rows="8" cols="80" value="" placeholder="Add the model...">
+                    <br><br>
+                    <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Enter a description..."></textarea>
+                    <br><br>
+                    <input id='input-price' name="price" rows="8" cols="80" value="" placeholder="Add the price...">
+                    <br><br>
+
+                    <p> Choose A Category: </p>
+                    <select id="categories" name="categories">
+                        <option value="1">Fitness</option>
+                        <option value="2">Travel</option>
+                        <option value="3">Studio Quality</option>
+                        <option value="4">Everyday</option>
+                    </select>
+                    <br><br>
+              
+                    <input id= 'create-button' type="submit" name="submit" value="Create New Headphone" class="submit">
+                </form>
+                <br><br>
+                <br><br>
+          
+            </div>
+                <div id="headphone-container">
+            </div>
+
+
+        </body>
+
+
+    </html>
