@@ -41,16 +41,11 @@ function createFormHandler(e) {
 }
 
 function postFetch (brand, model, description, price, category_id) {
+    constbodyData = {brand, model, description, price, category_id}
     fetch(endPoint, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            brand: brand,
-            model: model,
-            description: description,
-            price: price,
-            category_id: category_id
-        })
+        body: JSON.stringify(bodyData)
     })
     .then(response => response.json())
     .then(headphone => {
