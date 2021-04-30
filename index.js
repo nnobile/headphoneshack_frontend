@@ -14,7 +14,13 @@ function getHeadphones() {
       .then(res => res.json())
       .then(headphones => {
         headphones.data.forEach(headphone => {
-          const headphoneMarkup = `
+          render(headphone)
+      })
+    })
+}
+
+function render(headphone) {
+    const headphoneMarkup = `
             <div data-id=${headphone.id}>
             <h3>${headphone.attributes.brand}</h3>
             <p>${headphone.attributes.model}</p>
@@ -26,8 +32,6 @@ function getHeadphones() {
           <br><br>`;
 
           document.querySelector('#headphone-container').innerHTML += headphoneMarkup
-      })
-    })
 }
 
 function createFormHandler(e) {
@@ -49,19 +53,12 @@ function postFetch (brand, model, description, price, category_id) {
     })
     .then(response => response.json())
     .then(headphone => {
-        const headphoneData = headphone.data.attributes
-        const headphoneMarkup = `
-        <div data-id=${headphone.id}>
-            <h3>${headphoneData.brand}</h3>
-            <p>${headphoneData.model}</p>
-            <p>${headphoneData.description}</p>
-            <p>${headphoneData.price}</p>
-            <p>${headphoneData.category.name}</p>
-            <button data-id=${headphoneData.id}>edit></button>
-        </div>
-        <br></br>`;
-
-        document.querySelector('#headphone-container').innerHTML += 
-        headphoneMarkup;
+        console.log(headphone)
+        const headphoneData = headphone.data
+        render(headphoneData)
     })
 }
+
+
+
+
