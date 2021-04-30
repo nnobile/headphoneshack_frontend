@@ -16,6 +16,7 @@ function getHeadphones() {
         headphones.data.forEach(headphone => {
           render(headphone)
       })
+      //.catch(err => console.log(err))
     })
 }
 
