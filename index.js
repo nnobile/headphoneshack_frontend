@@ -41,7 +41,7 @@ function createFormHandler(e) {
 }
 
 function postFetch (brand, model, description, price, category_id) {
-    constbodyData = {brand, model, description, price, category_id}
+    const bodyData = {brand, model, description, price, category_id}
     fetch(endPoint, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -49,6 +49,19 @@ function postFetch (brand, model, description, price, category_id) {
     })
     .then(response => response.json())
     .then(headphone => {
-        console.log(headphone);
+        const headphoneData = headphone.data.attributes
+        const headphoneMarkup = `
+        <div data-id=${headphone.id}>
+            <h3>${headphoneData.brand}</h3>
+            <p>${headphoneData.model}</p>
+            <p>${headphoneData.description}</p>
+            <p>${headphoneData.price}</p>
+            <p>${headphoneData.category.name}</p>
+            <button data-id=${headphoneData.id}>edit></button>
+        </div>
+        <br></br>`;
+
+        document.querySelector('#headphone-container').innerHTML += 
+        headphoneMarkup;
     })
 }
