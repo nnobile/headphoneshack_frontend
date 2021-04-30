@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     getHeadphones()
 
     const createHeadphoneForm = document.querySelector("#create-headphone-form")
-    
+
     createHeadphoneForm.addEventListener("submit", (e) => createFormHandler(e))
 
 })
@@ -32,6 +32,14 @@ function getHeadphones() {
 
 function createFormHandler(e) {
     e.preventDefault()
-    console.log(e);
+    const brandInput = document.querySelector('#input-brand').value
+    const modelInput = document.querySelector('#input-model').value
+    const descriptionInput = document.querySelector('#input-description').value
+    const priceInput = document.querySelector('#price-input').value
+    const categoryID = parseInt(document.querySelector('#categories').value)
+    postFetch(brandInput, modelInput, descriptionInput, priceInput, categoryID)
+}
 
+function postFetch (brand, model, description, price, category_id) {
+    console.log(brand, model, description, price, category_id);
 }
