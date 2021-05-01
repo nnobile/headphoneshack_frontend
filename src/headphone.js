@@ -8,6 +8,21 @@ class Headphone {
        this.category = headphoneAttributes.category
        Headphone.all.push(this)
     }
+
+    renderHeadphoneCard() {
+         return `
+            <div data-id=${this.id}>
+                <h3>${this.brand}</h3>
+                <p>${this.model}</p>
+                <p>${this.description}</p>
+                <p>$${this.price}</p>
+                <p>${this.category.name}</p>
+                <button data-id=${this.id}>Edit</button>
+            </div>
+            <br><br>`;
+    }
+    
+
 }
 
 Headphone.all = [];

@@ -17,26 +17,13 @@ function getHeadphones() {
             //debugger
             let newHeadphone = new Headphone(headphone, headphone.attributes)
 
-          render(headphone)
+            document.querySelector('#headphone-container').innerHTML += 
+            newHeadphone.renderHeadphoneCard()
       })
       //.catch(err => console.log(err))
     })
 }
 
-function render(headphone) {
-    const headphoneMarkup = `
-            <div data-id=${headphone.id}>
-            <h3>${headphone.attributes.brand}</h3>
-            <p>${headphone.attributes.model}</p>
-            <p>${headphone.attributes.description}</p>
-            <p>$${headphone.attributes.price}</p>
-            <p>${headphone.attributes.category.name}</p>
-            <button data-id=${headphone.id}>Edit</button>
-            </div>
-          <br><br>`;
-
-          document.querySelector('#headphone-container').innerHTML += headphoneMarkup
-}
 
 function createFormHandler(e) {
     e.preventDefault()
@@ -59,7 +46,10 @@ function postFetch (brand, model, description, price, category_id) {
     .then(headphone => {
         console.log(headphone)
         const headphoneData = headphone.data
-        render(headphoneData)
+        let newHeadphone = new Headphone(headphoneData, headphoneData.attributes)
+
+            document.querySelector('#headphone-container').innerHTML += 
+            newHeadphone.renderHeadphoneCard()
     })
 }
 
