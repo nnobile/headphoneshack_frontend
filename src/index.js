@@ -14,6 +14,9 @@ function getHeadphones() {
       .then(res => res.json())
       .then(headphones => {
         headphones.data.forEach(headphone => {
+            //debugger
+            let newHeadphone = new Headphone(headphone, headphone.attributes)
+
           render(headphone)
       })
       //.catch(err => console.log(err))
