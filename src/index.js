@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    getCategories()
     getHeadphones()
 
     const createHeadphoneForm = document.querySelector("#create-headphone-form")
@@ -9,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getHeadphones() {
     HeadphoneApi.getHeadphones()
+}
+
+function getCategories() {
+    CategoryApi.getCategories()
 }
 
 
