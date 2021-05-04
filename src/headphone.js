@@ -1,4 +1,5 @@
 class Headphone {
+    static all = []
     constructor (headphone, headphoneAttributes){
        this.id = headphone.id
        this.brand = headphoneAttributes.brand
@@ -25,4 +26,3 @@ class Headphone {
 
 }
 
-Headphone.all = [];
