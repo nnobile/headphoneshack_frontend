@@ -43,6 +43,7 @@ function postFetch (brand, model, description, price, category_id) {
             document.querySelector('#headphone-container').innerHTML += 
             newHeadphone.renderHeadphoneCard()
     })
+    .catch(error => console.log(error))
 }
 
 
