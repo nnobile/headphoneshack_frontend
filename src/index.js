@@ -19,12 +19,18 @@ function getCategories() {
 
 function createFormHandler(e) {
     e.preventDefault()
-    const brandInput = document.querySelector('#input-brand').value
-    const modelInput = document.querySelector('#input-model').value
-    const descriptionInput = document.querySelector('#input-description').value
-    const priceInput = document.querySelector('#input-price').value
+    let brandInput = document.querySelector('#input-brand').value
+    let modelInput = document.querySelector('#input-model').value
+    let descriptionInput = document.querySelector('#input-description').value
+    let priceInput = document.querySelector('#input-price').value
     const categoryId = parseInt(document.querySelector('#categories').value)
     postFetch(brandInput, modelInput, descriptionInput, priceInput, categoryId)
+    //clear / reset of the form
+    document.querySelector('#input-brand').value = "";
+    document.querySelector('#input-model').value = "";
+    document.querySelector('#input-description').value = "";
+    document.querySelector('#input-price').value = "";
+
 }
 
 function postFetch (brand, model, description, price, category_id) {
