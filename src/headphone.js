@@ -13,12 +13,11 @@ class Headphone {
     renderHeadphoneCard() {
          return `
             <div data-id=${this.id}>
-                <h3>${this.brand}</h3>
-                <p>${this.model}</p>
-                <p>${this.description}</p>
-                <p>$${this.price}</p>
-                <p>${this.category.name}</p>
-                <button data-id=${this.id}>Edit</button>
+                <h3>Brand: ${this.brand}</h3>
+                <p>Model: ${this.model}</p>
+                <p>Description: ${this.description}</p>
+                <p>Price: $${this.price}</p>
+                <p>Category: ${this.category.name}</p>
             </div>
             <br><br>`;
     }

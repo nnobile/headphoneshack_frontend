@@ -25,7 +25,6 @@ function createFormHandler(e) {
     let priceInput = document.querySelector('#input-price').value
     const categoryId = parseInt(document.querySelector('#categories').value)
     postFetch(brandInput, modelInput, descriptionInput, priceInput, categoryId)
-    //clear / reset of the form
     document.querySelector('#input-brand').value = "";
     document.querySelector('#input-model').value = "";
     document.querySelector('#input-description').value = "";
