@@ -5,11 +5,10 @@ class HeadphoneApi{
         .then(res => res.json())
         .then(headphones => {
           headphones.data.forEach(headphone => {
-              //debugger
               let newHeadphone = new Headphone(headphone, headphone.attributes)
-  
-              document.querySelector('#headphone-container').innerHTML += 
-              newHeadphone.renderHeadphoneCard()
+              const headphoneCard = document.createElement('div');
+              headphoneCard.innerHTML= newHeadphone.renderHeadphoneCard()
+              document.querySelector('#headphone-container').prepend(headphoneCard)
         })
         //.catch(err => console.log(err))
       })

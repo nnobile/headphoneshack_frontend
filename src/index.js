@@ -29,19 +29,18 @@ function createFormHandler(e) {
 
 function postFetch (brand, model, description, price, category_id) {
     const bodyData = {brand, model, description, price, category_id}
-    fetch(endPoint, {
+    fetch(HeadphoneApi.endPoint, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(bodyData)
     })
     .then(response => response.json())
     .then(headphone => {
-        console.log(headphone)
         const headphoneData = headphone.data
         let newHeadphone = new Headphone(headphoneData, headphoneData.attributes)
-
-            document.querySelector('#headphone-container').innerHTML += 
-            newHeadphone.renderHeadphoneCard()
+        const headphoneCard = document.createElement('div');
+        headphoneCard.innerHTML= newHeadphone.renderHeadphoneCard()
+        document.querySelector('#headphone-container').prepend(headphoneCard)            
     })
     .catch(error => console.log(error))
 }
