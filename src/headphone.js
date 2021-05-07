@@ -19,7 +19,7 @@ class Headphone {
                 <p>Price: $${this.price}</p>
                 <p>Category: ${this.category.name}</p>
             </div>
-            <br><br>`;
+            `;
     }
     
 

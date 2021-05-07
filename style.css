@@ -1,10 +1,52 @@
-h1 {
-    text-align: center;
-    font-family: Rubik, serif; 
+html{
+    background: repeating-linear-gradient(to right, darkslategray 0, darkslategray 49px, steelblue 49px, steelblue 50px);
 }
 
-form#create-headphone-form {
-    margin: 2em auto;
-    width: 700px;
+body{
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 20px;
+    background-color: lightsteelblue;
+    box-shadow: 0 0 15px black;
     font-family: Rubik, serif;
 }
+
+h1 {
+    text-align: center; 
+}
+
+h3{
+    text-align: center; 
+}
+
+.form-container{
+    padding: 10px;
+    width: 80%;
+    margin: 25px auto;
+    background-color: lightcyan;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px gray;
+    border: 1px solid black;
+}
+
+input, textarea, select, form p{
+    display: block;
+    width: 85%;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+#headphone-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+[data-id]{
+    padding: 8px;
+    color: white;
+    background-color: teal;
+    height: 100%;
+}
+
