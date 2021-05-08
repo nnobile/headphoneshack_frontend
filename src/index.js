@@ -19,10 +19,10 @@ function getCategories() {
 
 function createFormHandler(e) {
     e.preventDefault()
-    let brandInput = document.querySelector('#input-brand').value
-    let modelInput = document.querySelector('#input-model').value
-    let descriptionInput = document.querySelector('#input-description').value
-    let priceInput = document.querySelector('#input-price').value
+    const brandInput = document.querySelector('#input-brand').value
+    const modelInput = document.querySelector('#input-model').value
+    const descriptionInput = document.querySelector('#input-description').value
+    const priceInput = document.querySelector('#input-price').value
     const categoryId = parseInt(document.querySelector('#categories').value)
     postFetch(brandInput, modelInput, descriptionInput, priceInput, categoryId)
     document.querySelector('#input-brand').value = "";
@@ -42,7 +42,7 @@ function postFetch (brand, model, description, price, category_id) {
     .then(response => response.json())
     .then(headphone => {
         const headphoneData = headphone.data
-        let newHeadphone = new Headphone(headphoneData, headphoneData.attributes)
+        const newHeadphone = new Headphone(headphoneData, headphoneData.attributes)
         const headphoneCard = document.createElement('div');
         headphoneCard.innerHTML= newHeadphone.renderHeadphoneCard()
         document.querySelector('#headphone-container').prepend(headphoneCard)            

@@ -10,7 +10,6 @@ class HeadphoneApi{
               headphoneCard.innerHTML= newHeadphone.renderHeadphoneCard()
               document.querySelector('#headphone-container').prepend(headphoneCard)
         })
-        //.catch(err => console.log(err))
       })
     }
 
