@@ -2,7 +2,7 @@
 This app allows users to create a new headphone and review other entries that other users have added.
 
 ## Framework
-I created the back end using Rails API and RESTful conventions. The front end is developed with plain Javascript and styled with CSS.
+The front end is developed with plain Javascript and styled with CSS.
 
 ## Installation Instructions
 You can fork and clone this app with the respective buttons above. After running open index.html in your terminal, you will be redirected to localhost:3000 in your Internet browser.
