@@ -12,7 +12,6 @@ class HeadphoneApi{
           else{
             headphones = json.data.filter(h => h.attributes.category_id === Number(event.target.value))
           }
-          console.log("filtered", headphones)
           headphones.forEach(headphone => {
               let newHeadphone = new Headphone(headphone, headphone.attributes)
               const headphoneCard = document.createElement('div');
