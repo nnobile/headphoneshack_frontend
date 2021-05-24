@@ -12,6 +12,7 @@ class HeadphoneApi{
           else{
             headphones = json.data.filter(h => h.attributes.category_id === Number(event.target.value))
           }
+          document.querySelector('#headphone-container').innerHTML = ""
           headphones.forEach(headphone => {
               let newHeadphone = new Headphone(headphone, headphone.attributes)
               const headphoneCard = document.createElement('div');
@@ -37,6 +38,31 @@ class HeadphoneApi{
           document.querySelector('#headphone-container').prepend(headphoneCard)            
       })
       .catch(error => console.log(error))
+  }
+
+  static filterHeadphones(event){
+    fetch(HeadphoneApi.endPoint)
+    .then(res => res.json())
+    .then(json => {
+      let headphones = json.data.sort(function(a, b){
+        if (a.attributes.model < b.attributes.model){
+          return -1
+        }
+        if (a.attributes.model > b.attributes.model){
+          return 1
+        }   
+      })
+      document.querySelector('#headphone-container').innerHTML = ""
+      headphones.forEach(headphone => {
+        let newHeadphone = new Headphone(headphone, headphone.attributes)
+        const headphoneCard = document.createElement('div');
+        headphoneCard.innerHTML= newHeadphone.renderHeadphoneCard()
+        document.querySelector('#headphone-container').prepend(headphoneCard)
+      })
+
+    }
+    )
+
   }
 
 }

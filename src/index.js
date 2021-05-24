@@ -4,10 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const createHeadphoneForm = document.querySelector("#create-headphone-form")
     const filterDropdown = document.querySelector("#filtered-category")
+    const filterButton = document.querySelector("#create-sort-button")
     filterDropdown.addEventListener("change", HeadphoneApi.getHeadphones)
 
     createHeadphoneForm.addEventListener("submit", createFormHandler)
-
+    filterButton.addEventListener("click", HeadphoneApi.filterHeadphones)
 })
 
 function createFormHandler(event) {
